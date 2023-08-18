@@ -9,6 +9,11 @@ Vue.createApp({
       this.rotateY = 0;
       this.rotateZ = 0;
     },
+    async copy() {
+      let text = `transform:${this.box.transform}`;
+      await navigator.clipboard.writeText(text);
+      alert("CSS copied to Clipboard!");
+    },
   },
   computed: {
     box() {
